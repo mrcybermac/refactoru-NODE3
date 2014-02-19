@@ -1,0 +1,39 @@
+extends layout
+block content
+    h1= title
+    //h1 I'm Jaded
+    p Welcome to #{title}
+    h1 something else
+    label: a(href='http://winter2014.refactoru.com') Student Site
+    p Hello World
+    div
+        p Hello
+        p World
+    #a-div-ID.a-div-class something
+        p
+            |this is a paragraph
+            |with three lines
+            |???????
+            |Nope it's all just one text line in the paragraph.
+    span(class="widget_#{title}") span with special class name
+        - someVar = true
+        if someVar == true
+            p this text
+        else
+            p that text
+
+    - someVar2 = true
+    if someVar2
+        p this text
+    else
+        p that text
+
+
+
+    mixin myMixin(things)
+        -each thing in things
+            li= thing
+
+    h4 some really important things:
+    ul
+        +myMixin(['star','banana','computer chip','vessel','oxygen atom'])
